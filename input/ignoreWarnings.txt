@@ -1,6 +1,4 @@
 == Suppressed Messages ==
-# To Do
-The Implementation Guide contains no examples for this profile
 
 # 提醒slice的pattern寫法將於R5版本不再支援，不影響驗證。（INFORMATION後方的 藍色字樣(1uses) 是指INFORMATION在此Profile中有被使用到）
 % The discriminator type 'pattern' is deprecated in R5%
