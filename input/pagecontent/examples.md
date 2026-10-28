@@ -28,6 +28,3 @@
 
 #### Specimen
 - [檢體](Specimen-spe-min.html)：依據用藥通報檢體-Specimen AIDS Drug Profile呈現用藥通報檢體之範例
-
-#### OperationOutcome
-

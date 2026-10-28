@@ -10,7 +10,7 @@
     "category" : "Public Health",
     "title"  : "臺灣愛滋病實作指引(TWAIDS IG)",
     "introduction"  : "臺灣愛滋病實作指引(Taiwan Acquired Immunodeficiency Syndrome Implementation Guide，TWAIDS IG)",
-    "ci-build"  : "https://build.fhir.org/ig/twcdc/aids"
+    "ci-build"  : "https://build.fhir.org/ig/omnifhir/aids"
   }
 
 

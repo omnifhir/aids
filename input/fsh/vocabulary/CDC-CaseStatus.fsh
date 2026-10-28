@@ -1,6 +1,6 @@
 CodeSystem: CDCCaseStatus
 Id: cdc-case-status
-Title: "CDC-愛滋用藥通報-門住診別"
+Title: "CDC-AIDS用藥通報-門住診別"
 Description: "臺灣衛生福利部疾病管制署「門住診別」代碼，代碼出版日期：2026-03-31；資料所屬單位：臺灣衛生福利部疾病管制署。"
 * ^caseSensitive = true
 * ^content = #complete
@@ -16,8 +16,8 @@ Description: "臺灣衛生福利部疾病管制署「門住診別」代碼，代
 
 ValueSet: CDCCaseStatus
 Id: cdc-case-status
-Title: "CDC-愛滋用藥通報-門住診別值集"
-Description: "CDC-愛滋用藥通報-門住診別值集"
+Title: "CDC-AIDS用藥通報-門住診別值集"
+Description: "CDC-AIDS用藥通報-門住診別值集"
 * ^date = "2026-03-31"
 * ^version = "0.1.0"
 * ^experimental = false
@@ -25,8 +25,8 @@ Description: "CDC-愛滋用藥通報-門住診別值集"
 
 ValueSet: CDCCaseStatusHL7
 Id: hl7-cdc-case-status
-Title: "HL7 ActEncounterCode + CDC-愛滋用藥通報-門住診別值集"
-Description: "HL7 ActEncounterCode + CDC-愛滋用藥通報-門住診別值集"
+Title: "HL7 ActEncounterCode + CDC-AIDS用藥通報-門住診別值集"
+Description: "HL7 ActEncounterCode + CDC-AIDS用藥通報-門住診別值集"
 * ^date = "2026-03-31"
 * ^version = "0.1.0"
 * ^experimental = false
@@ -39,7 +39,7 @@ Description: "HL7 ActEncounterCode + CDC-愛滋用藥通報-門住診別值集"
 
 Instance: cdc-case-status
 InstanceOf: ConceptMap
-Title: "愛滋用藥通報-CDC門住診別代碼對應HL7 ActEncounterCode"
+Title: "AIDS用藥通報-CDC門住診別代碼對應HL7 ActEncounterCode"
 Usage: #definition
 * experimental = false
 * status = #active
@@ -58,3 +58,19 @@ Usage: #definition
 * group.element[=].display = "門診"
 * group.element[=].target.code = #AMB
 * group.element[=].target.equivalence = #equal
+* group.element[+].code = #E
+* group.element[=].display = "急診"
+* group.element[=].target.code = #EMER
+* group.element[=].target.equivalence = #equal
+* group.element[+].code = #R
+* group.element[=].display = "住院(RCW)"
+* group.element[=].target.equivalence = #unmatched
+* group.element[+].code = #P
+* group.element[=].display = "住院負壓"
+* group.element[=].target.equivalence = #unmatched
+* group.element[+].code = #D
+* group.element[=].display = "住院出院備藥"
+* group.element[=].target.equivalence = #unmatched
+* group.element[+].code = #Y
+* group.element[=].display = "住院其他(或住院分類無法區分)"
+* group.element[=].target.equivalence = #unmatched

@@ -1,8 +1,8 @@
-Profile:        MedicationRequestAIDS
+Profile:        MedicationRequestAIDSDR
 Parent:         TWCoreMedicationRequest
 Id:             MedicationRequest-aids-drug
 Title:          "用藥-MedicationRequest AIDS Drug"
-Description:    "此用藥-MedicationRequest AIDS Drug Profile說明本IG如何進一步定義臺灣核心-藥品請求(TW Core MedicationRequest) Profile以呈現愛滋用藥通報之用藥資訊"
+Description:    "此用藥-MedicationRequest AIDS Drug Profile說明本IG如何進一步定義臺灣核心-藥品請求(TW Core MedicationRequest) Profile以呈現AIDS用藥通報之用藥資訊"
 * ^version = "0.1.0"
 
 * intent = #order
@@ -11,7 +11,7 @@ Description:    "此用藥-MedicationRequest AIDS Drug Profile說明本IG如何�
 * supportingInformation only Reference(TWCoreObservationBodyWeight)
 * supportingInformation 0..1
 * encounter 1..1 MS
-* encounter only Reference(EncounterAIDS)
+* encounter only Reference(EncounterAIDSDR)
 * requester 1..
 * requester only Reference(PractitionerAIDS)
 * medication[x] only CodeableConceptTW

@@ -4,7 +4,7 @@ Usage: #definition
 * url = "https://cdc.gov.tw/aids/CapabilityStatement/CapabilityStatementAIDSClient"
 * version = "0.1.0"
 * name = "CapabilityStatementAIDSClient"
-* title = "臺灣結核病-用戶端(AIDS Client)"
+* title = "臺灣愛滋病-用戶端(AIDS Client)"
 * status = #active
 * experimental = false
 * publisher = "衛生福利部疾病管制署"
@@ -18,7 +18,7 @@ Usage: #definition
 * description = "臺灣愛滋病實作指引(TWAIDS IG)用戶端(Client)之能力聲明"
 
 * rest.mode = #client
-* rest.documentation = "臺灣結核病-用戶端(AIDS Client)必須（SHALL）使用臺灣事前審查伺服端（TWPAS Server）能力聲明中的查詢參數，支援讀取和查詢一個或多個臺灣事前審查Profile(s)。"
+* rest.documentation = "臺灣愛滋病-用戶端(AIDS Client)必須（SHALL）使用臺灣事前審查伺服端（TWPAS Server）能力聲明中的查詢參數，支援讀取和查詢一個或多個臺灣事前審查Profile(s)。"
 * rest.security.service = http://terminology.hl7.org/CodeSystem/restful-security-service#SMART-on-FHIR
 * rest.security.description = "有關要求和建議，請參閱[安全性](security.html)。"
 
@@ -30,9 +30,9 @@ Usage: #definition
 * rest.interaction[=].code = #batch
 
 * rest.resource[+].type = #Bundle
-* rest.resource[=].supportedProfile[0] = "https://cdc.gov.tw/aids/StructureDefinition/Bundle-aids-reporting"
-* rest.resource[=].supportedProfile[1] = "https://cdc.gov.tw/aids/StructureDefinition/Bundle-aids-drug"
-* rest.resource[=].supportedProfile[2] = "https://cdc.gov.tw/aids/StructureDefinition/Bundle-aids-check"
+* rest.resource[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension.valueCode = #SHALL
+* rest.resource[=].profile = "https://cdc.gov.tw/aids/StructureDefinition/Bundle-aids-drug"
 * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #create
@@ -48,26 +48,9 @@ Usage: #definition
 * rest.resource[=].referencePolicy = #resolves
 
 * rest.resource[+].type = #MessageHeader
-* rest.resource[=].supportedProfile[0] = "https://cdc.gov.tw/aids/StructureDefinition/MessageHeader-aids-reporting"
-* rest.resource[=].supportedProfile[1] = "https://cdc.gov.tw/aids/StructureDefinition/MessageHeader-aids-drug"
-* rest.resource[=].supportedProfile[2] = "https://cdc.gov.tw/aids/StructureDefinition/MessageHeader-aids-check"
-* rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].interaction[=].extension.valueCode = #SHALL
-* rest.resource[=].interaction[=].code = #create
-* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].interaction[=].extension.valueCode = #SHALL
-* rest.resource[=].interaction[=].code = #read
-* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].interaction[=].extension.valueCode = #SHALL
-* rest.resource[=].interaction[=].code = #vread
-* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest.resource[=].interaction[=].extension.valueCode = #SHALL
-* rest.resource[=].interaction[=].code = #update
-* rest.resource[=].referencePolicy = #resolves
-
-* rest.resource[+].type = #DiagnosticReport
-* rest.resource[=].supportedProfile[0] = "https://cdc.gov.tw/aids/StructureDefinition/DiagnosticReport-aids-reporting"
-* rest.resource[=].supportedProfile[1] = "https://cdc.gov.tw/aids/StructureDefinition/DiagnosticReport-aids-check"
+* rest.resource[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension.valueCode = #SHALL
+* rest.resource[=].profile = "https://cdc.gov.tw/aids/StructureDefinition/MessageHeader-aids-drug"
 * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #create
@@ -83,6 +66,8 @@ Usage: #definition
 * rest.resource[=].referencePolicy = #resolves
 
 * rest.resource[+].type = #Organization
+* rest.resource[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].profile = "https://cdc.gov.tw/aids/StructureDefinition/Organization-aids"
 * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
@@ -99,6 +84,8 @@ Usage: #definition
 * rest.resource[=].referencePolicy = #resolves
 
 * rest.resource[+].type = #Patient
+* rest.resource[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].profile = "https://cdc.gov.tw/aids/StructureDefinition/Patient-aids"
 * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
@@ -115,20 +102,9 @@ Usage: #definition
 * rest.resource[=].referencePolicy = #resolves
 
 * rest.resource[+].type = #Observation
-* rest.resource[=].supportedProfile[0] = "https://cdc.gov.tw/aids/StructureDefinition/Observation-smear"
-* rest.resource[=].supportedProfile[1] = "https://cdc.gov.tw/aids/StructureDefinition/Observation-mgit"
-* rest.resource[=].supportedProfile[2] = "https://cdc.gov.tw/aids/StructureDefinition/Observation-lj"
-* rest.resource[=].supportedProfile[3] = "https://cdc.gov.tw/aids/StructureDefinition/Observation-identify"
-* rest.resource[=].supportedProfile[4] = "https://cdc.gov.tw/aids/StructureDefinition/Observation-drug-sensitive-1"
-* rest.resource[=].supportedProfile[5] = "https://cdc.gov.tw/aids/StructureDefinition/Observation-drug-sensitive-2"
-* rest.resource[=].supportedProfile[6] = "https://cdc.gov.tw/aids/StructureDefinition/Observation-sputum-pcr"
-* rest.resource[=].supportedProfile[7] = "https://cdc.gov.tw/aids/StructureDefinition/Observation-igra"
-* rest.resource[=].supportedProfile[8] = "https://cdc.gov.tw/aids/StructureDefinition/Observation-xpert-maidsc"
-* rest.resource[=].supportedProfile[9] = "https://cdc.gov.tw/aids/StructureDefinition/Observation-xpert-rmp"
-* rest.resource[=].supportedProfile[10] = "https://cdc.gov.tw/aids/StructureDefinition/Observation-genotype"
-* rest.resource[=].supportedProfile[11] = "https://cdc.gov.tw/aids/StructureDefinition/Observation-moleculex"
-* rest.resource[=].supportedProfile[12] = "https://cdc.gov.tw/aids/StructureDefinition/Observation-aids-check"
-* rest.resource[=].supportedProfile[13] = "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/Observation-body-weight-twcore"
+* rest.resource[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension.valueCode = #SHALL
+* rest.resource[=].profile = "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/Observation-body-weight-twcore"
 * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #create
@@ -144,8 +120,9 @@ Usage: #definition
 * rest.resource[=].referencePolicy = #resolves
 
 * rest.resource[+].type = #Specimen
-* rest.resource[=].supportedProfile[0] = "https://cdc.gov.tw/aids/StructureDefinition/Specimen-aids-reporting"
-* rest.resource[=].supportedProfile[1] = "https://cdc.gov.tw/aids/StructureDefinition/Specimen-aids-drug"
+* rest.resource[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension.valueCode = #SHALL
+* rest.resource[=].profile = "https://cdc.gov.tw/aids/StructureDefinition/Specimen-aids-drug"
 * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #create
@@ -161,8 +138,27 @@ Usage: #definition
 * rest.resource[=].referencePolicy = #resolves
 
 * rest.resource[+].type = #Encounter
-* rest.resource[=].supportedProfile[0] = "https://cdc.gov.tw/aids/StructureDefinition/Encounter-aids-drug"
-* rest.resource[=].supportedProfile[1] = "https://cdc.gov.tw/aids/StructureDefinition/Encounter-aids-check"
+* rest.resource[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension.valueCode = #SHALL
+* rest.resource[=].profile = "https://cdc.gov.tw/aids/StructureDefinition/Encounter-aids-drug"
+* rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #create
+* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #read
+* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #vread
+* rest.resource[=].interaction[+].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].interaction[=].extension.valueCode = #SHALL
+* rest.resource[=].interaction[=].code = #update
+* rest.resource[=].referencePolicy = #resolves
+
+* rest.resource[+].type = #Procedure
+* rest.resource[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension.valueCode = #SHOULD
+* rest.resource[=].profile = "https://cdc.gov.tw/aids/StructureDefinition/Procedure-aids-drug"
 * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL
 * rest.resource[=].interaction[=].code = #create
@@ -178,6 +174,8 @@ Usage: #definition
 * rest.resource[=].referencePolicy = #resolves
 
 * rest.resource[+].type = #Practitioner
+* rest.resource[=].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+* rest.resource[=].extension.valueCode = #SHALL
 * rest.resource[=].profile = "https://cdc.gov.tw/aids/StructureDefinition/Practitioner-aids"
 * rest.resource[=].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest.resource[=].interaction[=].extension.valueCode = #SHALL

@@ -1,8 +1,8 @@
-Profile:        BundleAIDS
+Profile:        BundleAIDSDR
 Parent:         TWCoreBundle
 Id:             Bundle-aids-drug
 Title:          "用藥通報-Bundle AIDS Drug"
-Description:    "此用藥通報-Bundle AIDS Drug Profile說明本IG如何進一步定義臺灣核心-資料交換基本單位（TW Core Bundle） Profile以呈現愛滋用藥通報"
+Description:    "此用藥通報-Bundle AIDS Drug Profile說明本IG如何進一步定義臺灣核心-資料交換基本單位（TW Core Bundle） Profile以呈現AIDS用藥通報"
 * ^version = "0.1.0"
 * type = #message
 
@@ -17,6 +17,7 @@ Description:    "此用藥通報-Bundle AIDS Drug Profile說明本IG如何進一
 	patient 1..* MS and
 	practitioner 1..* MS and
 	encounter 1..* MS and
+	procedure 0..* MS and
 	observationBodyWeight 1..* MS and
 	specimen 1..* MS
 
@@ -26,11 +27,15 @@ Description:    "此用藥通報-Bundle AIDS Drug Profile說明本IG如何進一
 
 * entry[medicationRequest] ^short = "用藥(MedicationRequest)"
 * entry[medicationRequest].resource 1..1 MS
-* entry[medicationRequest].resource only MedicationRequestAIDS
+* entry[medicationRequest].resource only MedicationRequestAIDSDR
 
 * entry[encounter] ^short = "就醫資訊(Encounter)"
 * entry[encounter].resource 1..1 MS
-* entry[encounter].resource only EncounterAIDS
+* entry[encounter].resource only EncounterAIDSDR
+
+* entry[procedure] ^short = "特定治療項目(Procedure)"
+* entry[procedure].resource 1..1 MS
+* entry[procedure].resource only ProcedureAIDSDR
 
 * entry[patient] ^short = "病人(Patient)"
 * entry[patient].resource 1..1 MS
@@ -46,9 +51,9 @@ Description:    "此用藥通報-Bundle AIDS Drug Profile說明本IG如何進一
 
 * entry[specimen] ^short = "檢體(Specimen)"
 * entry[specimen].resource 1..1 MS
-* entry[specimen].resource only SpecimenAIDS
+* entry[specimen].resource only SpecimenAIDSDR
 
 * entry[messageHeader] ^short = "用藥通報訊息(MessageHeader)"
 * entry[messageHeader].resource 1..1 MS
-* entry[messageHeader].resource only MessageHeaderAIDS
+* entry[messageHeader].resource only MessageHeaderAIDSDR
 

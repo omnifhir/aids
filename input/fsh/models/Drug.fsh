@@ -1,7 +1,7 @@
 Logical: DrugModel
 Id: DrugModel
-Title: "愛滋用藥通報(Drug)之資料模型"
-Description: "愛滋用藥通報(Drug)之資料模型"
+Title: "AIDS用藥通報(Drug)之資料模型"
+Description: "AIDS用藥通報(Drug)之資料模型"
 * ^version = "0.1.0"
 
 * seqNo 0..1 id "流水號，系統自動增加" "流水號，系統自動增加"
@@ -20,6 +20,17 @@ Description: "愛滋用藥通報(Drug)之資料模型"
 * weight 0..1 decimal "最近體重" "最近體重"
 * weight ^example.label = "最近體重"
 * weight ^example.valueDecimal = 50.1
+* traninhospid 0..1 string "轉入院所代碼" "轉入院所代碼"
+* traninhospid ^example.label = "轉入院所代碼"
+* traninhospid ^example.valueString = "0132010014"
+* cureitemn01 0..1 string "特定治療項目代號(一)" "特定治療項目代號(一)"
+* cureitemn01 ^example.label = "特定治療項目代號"
+* cureitemn01 ^example.valueString = "A2"
+* cureitemn02 0..1 string "特定治療項目代號(二)" "特定治療項目代號(二)"
+* cureitemn03 0..1 string "特定治療項目代號(三)" "特定治療項目代號(三)"
+* cureitemn04 0..1 string "特定治療項目代號(四)" "特定治療項目代號(四)"
+
+
 * icd10Cm1 1..1 code  "主診斷 ICD10" "主診斷 ICD10"
 * icd10Cm1 ^example.label = "主診斷 ICD10"
 * icd10Cm1 ^example.valueCode = #A15.0
@@ -92,9 +103,6 @@ Description: "愛滋用藥通報(Drug)之資料模型"
 
 
 /*
-* icd10Cm1 1..1 code 
-* icd10Cm1 ^example.label = "主診斷 ICD10"
-* icd10Cm1 ^example.value = "A16"
 
 * orderSeqNo
 * orderSeqNo ^example.label = "醫令序號"
@@ -102,6 +110,7 @@ Description: "愛滋用藥通報(Drug)之資料模型"
 
 * dissource ^example.label = "資料來源"
 * dissource ^example.value = "T"*/
+
 
 // -----------------------------Mapping-----------------------------
 
@@ -152,6 +161,7 @@ Title: "Mapping to Organization AIDS Drug"
 Source: DrugModel
 Target: "https://cdc.gov.tw/aids/StructureDefinition/Organization-aids"
 * hospId -> "Organization.identifier"
+* traninhospid -> "Organization.identifier"
 
 Mapping: AIDSDRSpecimen
 Id: AIDSDRSpecimen
@@ -168,7 +178,22 @@ Target: "https://cdc.gov.tw/aids/StructureDefinition/Encounter-aids-drug"
 * caseStatus -> "Encounter.class"
 * funcType -> "Encounter.serviceType"
 * caseInDate -> "Encounter.period.start"
-* caseOutDate	 -> "Encounter.period.end"
+* caseOutDate -> "Encounter.period.end"
+* traninhospid -> "Encounter.hospitalization.destination"
+* cureitemn01 -> "Encounter.diagnosis.condition"
+* cureitemn02 -> "Encounter.diagnosis.condition"
+* cureitemn03 -> "Encounter.diagnosis.condition"
+* cureitemn04 -> "Encounter.diagnosis.condition"
+
+Mapping: AIDSDProcedure
+Id: AIDSDRProcedure
+Title: "Mapping to Procedure AIDS Drug"
+Source: DrugModel
+Target: "https://cdc.gov.tw/aids/StructureDefinition/Procedure-aids-drug"
+* cureitemn01 -> "Procedure.code.text"
+* cureitemn02 -> "Procedure.code.text"
+* cureitemn03 -> "Procedure.code.text"
+* cureitemn04 -> "Procedure.code.text"
 
 Mapping: AIDSDRObservationBodyWeight
 Id: AIDSDRObservationBodyWeight

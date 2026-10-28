@@ -1,5 +1,5 @@
 Instance: drug
-InstanceOf: BundleAIDS
+InstanceOf: BundleAIDSDR
 Title: "用藥通報"
 Description: "依據用藥通報-Bundle AIDS Drug Profile呈現用藥通報之範例"
 Usage: #example
@@ -21,6 +21,12 @@ Usage: #example
 
 * entry[encounter].fullUrl = "https://cdc.gov.tw/aids/Encounter/enc-drug"
 * entry[encounter].resource = enc-drug
+
+* entry[procedure][0].fullUrl = "https://cdc.gov.tw/aids/Procedure/pro-drug-1"
+* entry[procedure][0].resource = pro-drug-1
+
+* entry[procedure][1].fullUrl = "https://cdc.gov.tw/aids/Procedure/pro-drug-2"
+* entry[procedure][1].resource = pro-drug-2
 
 * entry[observationBodyWeight].fullUrl = "https://cdc.gov.tw/aids/Observation/weight"
 * entry[observationBodyWeight].resource = weight

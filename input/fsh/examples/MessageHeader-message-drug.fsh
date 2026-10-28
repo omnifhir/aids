@@ -1,5 +1,5 @@
 Instance: message-drug
-InstanceOf: MessageHeaderAIDS
+InstanceOf: MessageHeaderAIDSDR
 Title: "用藥通報訊息"
 Description: "依據用藥通報訊息-MessageHeader AIDS Drug Profile呈現用藥通報訊息之範例"
 Usage: #example

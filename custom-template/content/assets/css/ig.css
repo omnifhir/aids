@@ -1,11 +1,11 @@
 #segment-footer > .container {
-  background-color: #2e8b57;
+  background-color: #14723E;
 }
 #segment-header > .container {
   background-color: #ffffff;
 }
 .navbar-inverse {
-  background-color: #2e8b57;
+  background-color: #14723E;
 }
 #hl7-nav {
   line-height: 50px;
@@ -73,9 +73,9 @@
 .dropdown:hover .dropdown-menu {display: block;}
 
 :root {
-  --btn-hover-color: #0DCD7B;
-  --btn-gradient-start-color: #0DCD7B;
-  --btn-gradient-end-color: #0DCD7B;
+  --btn-hover-color: #00682D;
+  --btn-gradient-start-color: #00682D;
+  --btn-gradient-end-color: #00682D;
   --ig-header-container-color: #ffffff;
 }
 

@@ -1,8 +1,8 @@
-Profile:        MessageHeaderAIDS
+Profile:        MessageHeaderAIDSDR
 Parent:         TWCoreMessageHeader
 Id:             MessageHeader-aids-drug
 Title:          "用藥通報訊息-MessageHeader AIDS Drug"
-Description:    "此用藥通報訊息-MessageHeader AIDS Drug Profile說明本IG如何進一步定義臺灣核心-訊息表頭（TW Core MessageHeader） Profile以呈現愛滋用藥通報訊息"
+Description:    "此用藥通報訊息-MessageHeader AIDS Drug Profile說明本IG如何進一步定義臺灣核心-訊息表頭（TW Core MessageHeader） Profile以呈現AIDS用藥通報訊息"
 * ^version = "0.1.0"
 
 * eventCoding.code = #drug
@@ -10,9 +10,7 @@ Description:    "此用藥通報訊息-MessageHeader AIDS Drug Profile說明本I
 * sender 1..1 MS
 * sender only Reference(TWCoreOrganization)
 * focus 1..
-* focus only Reference(MedicationRequestAIDS or SpecimenAIDS)
-
-
+* focus only Reference(MedicationRequestAIDSDR or SpecimenAIDSDR)
 
 * sender ^short = "醫院十碼章"
 * id ^short = "流水號，系統自動增加"
